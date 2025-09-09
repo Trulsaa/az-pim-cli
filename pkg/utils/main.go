@@ -39,7 +39,7 @@ func GetRoleAssignment(name interface{}, prefix interface{}, role interface{}, e
 		var match *pim.RoleAssignment = nil
 		subscriptionName := strings.ToLower(eligibleRoleAssignment.Properties.ExpandedProperties.Scope.DisplayName)
 
-		if prefix, exists := prefix.(string); exists {
+		if prefix, exists := prefix.(string); exists && prefix != "" {
 			prefix = strings.ToLower(prefix)
 			if strings.HasPrefix(subscriptionName, prefix) {
 				match = &eligibleRoleAssignment

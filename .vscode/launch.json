@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug activate command",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      "program": "${workspaceFolder}/main.go",
+      "args": [
+        "activate",
+        "--duration",
+        "30",
+        "--role-name",
+        "Owner",
+        "--subscription-name",
+        "utviklingsplattform-synt",
+        "--reason",
+        "test"
+      ]
+    }
+  ]
+}

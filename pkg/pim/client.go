@@ -147,7 +147,7 @@ func ValidateRoleAssignmentRequest(scope string, roleAssignmentRequest RoleAssig
 		Payload: roleAssignmentValidationRequest,
 	}, validationResponse)
 
-	if validationResponse.Properties.Status != "Granted" {
+	if validationResponse.Properties.Status != "Granted" && validationResponse.Properties.Status != "PendingEvaluation" {
 		log.Printf("ERROR: The role assignment validation failed with status '%s'", validationResponse.Properties.Status)
 		log.Fatalln(validationResponse)
 		return false
